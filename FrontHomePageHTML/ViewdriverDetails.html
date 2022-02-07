@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <ul id="dataList">
+
+  </ul>
+
+
+
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <!-- <script src="./firebase.js"></script> -->
+  <script src="FirebaseAPI.js"></script>
+  <script src="DriverRegister.js"></script>
+
+
+  <script type="module">
+
+
+    // firebase.initializeApp(firebaseConfig);
+
+    // reference your database
+    var contactFormDB = firebase.database().ref("contactForm").orderByKey();
+    const dataList = document.getElementById('dataList');
+    var response = [];
+
+    contactFormDB.once("value")
+      .then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+          var key = childSnapshot.key;
+          // childData will be the actual contents of the child
+          var childData = childSnapshot.val();
+          response.push(childData);
+
+        });
+        console.log(response)
+        let dataString = ''
+        response.forEach((data) => {
+          dataString += `<li>
+                                <p>Name : ${data.name} <br /> 
+                                <p>Adhar : ${data.Adhar} <br /> 
+                                <p>Area : ${data.Area} <br />    
+                                <p>Gender : ${data.Gender} <br />     
+                                <p>emailid : ${data.emailid} <br />
+                                <p>license : ${data.license} <br />     
+                                </p></li>`
+        })
+        dataList.innerHTML = dataString
+      });
+  </script>
+</body>
+
+</html>

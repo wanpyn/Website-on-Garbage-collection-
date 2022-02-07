@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickerLaza</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="leaflogo.png" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="giveFeedback.html">GiveFeedback</a></li>
+                    <li><a href="images.html">View Latest Image</a></li>
+                    <li><a href="#social-Contacts">Contact</a></li>
+                </ul>
+            </nav>
+            <img src="menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h2>PickerLaza<br>Smart-Bins</h2>
+                <h3>Location For</h3>
+                <p>Gwahati</p>
+                <a href="#login-form" class="link"><button type="button" class="but"
+                        onclick="document.getElementById('login-form').style.display='block'">SignIn <img src="
+                    arrow.png"></button></a>
+            </div>
+            <div class="col-2">
+                <img src="fill.png" class="controller">
+                <div class="color-box"></div>
+            </div>
+        </div>
+
+        <div id="login-form" class="login-page">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type='button' onclick="Adminlogin()" class="toggle-btn">Admin</button>
+                    <button type='button' onclick="Driverlogin()" class="toggle-btn">Driver</button>
+                </div>
+                <form id="Admin-login" class="input-group-Adminlogin" onsubmit="login()">
+                    <input type="email" id="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" id="password" class="input-field" placeholder="Password" required>
+                    <button onclick="resetPass()" id="forgot-button">Forgot Password</button>
+
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <form id="Driver-login" class="input-group-Driverlogin" onsubmit="logins()">
+                    <input type="text" id="emails" class="input-field" placeholder="Email Id" required>
+                    <input type="password" id="passwords" class="input-field" placeholder="Password" required>
+                    <button onclick="resetPass()" id="forgot-button">Forgot Password</button>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+            <div id="social-Contacts">
+                <small>Admin Contacts:8257091865</small>
+                Created By GROUP 10
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //this script code here is used to proper aligment of the driver and login form box
+        var x = document.getElementById('Admin-login');
+        var y = document.getElementById('Driver-login');
+        var z = document.getElementById('btn');
+        function Driverlogin() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function Adminlogin() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <script>
+        // //this code is used to to make the admin login or drive login from box disapear on clicking outside of the box
+        // var modal = document.getElementById('login-form');
+        // window.onclick = function (event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+    </script>
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "130px"
+            }
+            else {
+                menuList.style.maxHeight = "0px"
+            }
+        }
+    </script>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- 
+TODO: Add SDKs for Firebase products that you want to use -->
+<!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
+<!-- Our script must be loaded after firebase references -->
+<script src="FirebaseAPI.js"></script>
+<!-- <script src="DriverLogin.js"></script> -->
+<script src="FrontHomePage.js"></script>
+<!-- <script src="DriverLogin.js"></script> -->
+<!-- <script src="DriverLogin.js"></script> -->
+
+</html>

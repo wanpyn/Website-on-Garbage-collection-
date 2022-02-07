@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailes of every driver</title>
+    <link rel="stylesheet" href="ViewDriver.css">
+</head>
+<body>
+
+  <h1>View Driver Details</h1>
+  <div class="tab">
+  <table class="table table-light c d">
+
+    <tr>
+      <td class="name">Name</td>
+      <td class="name">Adhar</td>
+      <td class="name">Area </td>
+      <td class="name1">Gender</td>
+      <td class="name1">Email-id </td>
+      <td class="name2">License</td>
+      <td class="name3">Phone</td>
+      </tr>
+  </table>
+  </div>
+    <ul id="dataList">
+
+    </ul>
+
+
+
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script src="ViewDriver.js"></script>
+
+
+
+  <script type="module">
+
+
+    firebase.initializeApp(firebaseConfig);
+
+    // reference your database
+    var contactFormDB = firebase.database().ref("Driver").orderByKey();
+    const dataList = document.getElementById('dataList');
+    var response = [];
+
+   contactFormDB.once("value")
+    .then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+         var key = childSnapshot.key;
+      // childData will be the actual contents of the child
+         var childData = childSnapshot.val();
+        response.push(childData);
+
+    });
+    console.log(response)
+    let dataString = ''
+    response.forEach((data) =>
+    {
+        dataString += `<div class="tab"><table class="table table-dark c">
+
+
+                                <tr>
+                                  <td class="n1">${data.name}</td>
+                                  <td  class="n1">${data.Adhar}</td>
+                                  <td  class="n1" ><span style="color:red">${data.Area}</span></td>
+                                  <td class="n1">${data.gender}</td>
+                                  <td class="n1"><span style="color:blue"> ${data.emailid}</td></span>
+                                  <td  class="n1">${data.license}</td>
+                                  <td  class="n1">${data.Phone}</td>
+
+                                </tr>
+
+
+
+
+                              </table></div>`
+
+    })
+    dataList.innerHTML = dataString
+    });
+  </script>
+</body>
+</html>

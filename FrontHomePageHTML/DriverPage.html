@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriverUploadImage</title>
+    <link rel="stylesheet" href="DriverPage.css">
+</head>
+
+<body>
+    <input type="file" id="photo">
+    <label for="opts">District:</label>
+    <select id="opts">
+        <option value="mico">Migo</option>
+        <option value="pico" selected>Pico</option>
+        <option value="ico">Ico</option>
+        <option value="ches">Ches</option>
+    </select>
+    <button id="upload" onclick="uploadImage()">Upload Image</button>
+    <div class="Uploadbar">
+        <label class="upProgress"></label>
+    </div>
+</body>
+ The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+TODO: Add SDKs for Firebase products that you want to use -->
+<!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+ Our script must be loaded after firebase references 
+<script src="FirebaseAPI.js"></script>
+<script src="DriverPage.js"></script>
+
+
+</html> -->
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Preview Image Before Upload | CodingNepal</title>
+    <link rel="stylesheet" href="DriverPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <button><a href="ViewDustbin.html">View Bin Level</button></a>
+        <div class="wrapper">
+            <div class="image">
+                <img src="" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="text">
+                    No file chosen, yet!
+                </div>
+            </div>
+            <div id="cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="file-name">
+                File name here
+            </div>
+        </div>
+        <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+        <input id="default-btn" type="file" hidden>
+        <label for="opts">District:</label>
+        <select id="opts">
+            <option value="Azara">Azara</option>
+            <option value="Adabari">Adabari</option>
+            <option value="Jalukbari" selected>Jalukbari</option>
+            <option value="Maligaon">Maligaon</option>
+            <option value="Bharalumukh">Bharalumukh</option>
+            <option value="Shantipur">Shantipur</option>
+            <option value="Paltanbazar">Paltanbazar</option>
+            <option value="Ganeshguri">Ganeshguri</option>
+            <option value="Khanapara">Khanapara</option>
+        </select>
+        <button id="upload" onclick="uploadImage()">Upload Image</button>
+        <div class="Uploadbar">
+            <progress min="0" max="100" value="0" class="upProgress"></progress>
+        </div>
+        <button onclick="log()">Logout</button>
+    </div>
+</body>
+<script>
+    const wrapper = document.querySelector(".wrapper");
+    const fileName = document.querySelector(".file-name");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const cancelBtn = document.querySelector("#cancel-btn i");
+    const img = document.querySelector("img");
+    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+    function defaultBtnActive() {
+        defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const result = reader.result;
+                img.src = result;
+                wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function () {
+                img.src = "";
+                wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+        }
+        if (this.value) {
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    });
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- 
+TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries  -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<!-- Our script must be loaded after firebase references -->
+<script src="FirebaseAPI.js"></script>
+<script src="DriverPage.js"></script>
+
+</html>

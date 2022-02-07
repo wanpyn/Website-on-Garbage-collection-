@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>Create an account</h1>
+        <form action="" id="contactForm">
+
+            <div class="alert">Your message sent</div>
+
+            <div class="inputBox">
+
+                <input type="text" id="name" placeholder="Enter your name" class="input" />
+
+            </div>
+
+            <div class="inputBox">
+                <input type="email" id="emailid" placeholder="Enter your mail" class="input" />
+            </div>
+            <div class="inputBox">
+                <input type="text" id="Adhar" placeholder="Enter your adhar" class="input" />
+            </div>
+            <div class="inputBox">
+                <input type="text" id="license" placeholder="License" class="input">
+
+            </div>
+            <div class="inputBox">
+                <label for="country">Select area</label>
+                <select id="Area" name="area">
+                    <option value="Azara">Azara</option>
+                    <option value="Adabari">Adabari</option>
+                    <option value="Jalukbari">Jalukbari</option>
+                    <option value="Maligaon">Maligaon</option>
+                    <option value="Bharalumukh">Bharalumukh</option>
+                    <option value="Shantipur">Shantipur</option>
+                </select>
+            </div>
+
+
+
+
+            <div class="inputBox">
+
+                <label for="Gender">Select Gender</label>
+                <select name="gender" id="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+
+
+
+
+
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase.js"></script>
+    <!-- <script src="firebase.js"></script> -->
+    <script src="FirebaseAPI.js"></script>
+    <script src="DriverRegister.js"></script>
+</body>
+
+
+</html>

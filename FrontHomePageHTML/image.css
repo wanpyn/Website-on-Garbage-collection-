@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 3%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.navbar{
+    width: 105%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+    margin:10px 0;
+}  
+.menu-icon{
+    width: 35px;
+    cursor: pointer;
+    display: none;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin:10px 5px 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#000;
+    font-size: 14px;
+}
+nav ul li a:hover{
+    color:green;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:20px 0;
+}
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+.col-1 h2{
+    font-size: 50px;
+    font-weight: 700;
+}
+.col-1 h3{
+    font-size: 25px;
+    color:#707070;
+    font-weight: 100;
+    margin:8px 0px 9px;
+}
+.col-1 p{
+    font-size: 30px;
+    font-weight: 400;
+    margin:0px 0px 20px;
+}
+
+.but{
+    width: 140px;
+    font-size: 16px;
+    font-weight: 400;
+    border:none;
+    padding: 14px  8px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #38b000,#9ef01a);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+.but img{
+    width: 40px;
+    display: none;
+}
+.but:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.but:hover img{
+    display: block;
+}
+.col-1::after{
+    content: '';
+    width: 13px;
+    height:65%;
+    background:linear-gradient(#9ef01a,#38b000);
+    position: absolute;
+    left:-30px;
+    top:0;
+}
+.col-2{
+    position:relative;
+    flex-basis: 25%;
+    margin: 20px 0;
+    display: flex;
+    align-items: right;
+}
+.col-2 .controller{
+    width: 100%;
+}
+.color-box{
+    position: absolute;
+    right: 10px;
+    top:0;
+    background: linear-gradient(#38b000, #9ef01a);
+    width: 100%;
+    height:100%;
+    border-radius: 20px 0 0 20px;
+    z-index: -1;
+    transform: translateX(140px);
+}
+div #social-Contacts{
+    text-align: center;
+    width:100%;
+    /* margin: 10px 40px 15px; */
+    padding: 20px;
+    color:#fff;
+  background: linear-gradient(#38b000, #9ef01a);
+}
+.link{
+    text-decoration: none;
+}
+/* #login-form{ 
+    this block of code to hide the login part 
+    display: none;
+     transition: 0.5s; 
+} */
+#myimg{
+    height: 290px;
+                margin-top: 100px;
+                width: 500px;
+                margin-left: 20%;
+
+                border: 2px solid black;
+}
+
+.form-box{
+    background: transparent;
+    background: turquoise;
+    width: 350px;
+    height: 330px;
+    position: relative;
+    margin: 2% auto;
+    background:linear-gradient(#e9f5db,#e9f5db);
+    padding:10px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.button-box{
+    width: 220px;
+    top:0px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow:  10px 0 67px 15px #38b000;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding:10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border:none;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top:0;
+    left:0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(#38b000,#38b000);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group-Adminlogin{
+    top:150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-group-Driverlogin{
+    top:150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding:10px 0;
+    margin:1px 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid #38b000;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 55%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+   
+    margin: auto;
+    color:#fff;
+   background: linear-gradient(to right, #38b000,#9ef01a);
+    border:0;
+    outline: none;
+    border-radius: 30px;
+}
+.submit-btn:hover{
+ font-weight: 800;
+}
+#forgot-button{
+    margin:15px 70px 20px;
+    width: 140px;
+    font-size: 12px;
+    font-weight: 200;
+    border:none;
+    padding: 12px  2px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #38b000,#9ef01a);
+    border-radius: 25px;
+    cursor: pointer;
+}
+#forgot-button:hover{
+ font-weight: 700;
+}
+#Admin-login{
+    left:50px;
+}
+#Admin-login input{
+    color:#006400;
+    font-size: 15;
+}
+#Driver-login{
+    left:450px;
+}
+#Driver-login input{
+    color: #006400;
+    font-size: 15;
+} 
+input::placeholder{
+color:green;
+}
+#image-main{
+    position: relative
+}
+#retrieve{
+    width: 140px;
+    font-size: 16px;
+    font-weight: 400;
+    border:none;
+    padding: 14px  8px;
+    
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #38b000,#9ef01a);
+    border-radius: 25px;
+    cursor: pointer;
+}
+#q{
+    width: 140px;
+    font-size: 16px;
+    font-weight: 400;
+    border:none;
+    padding: 14px  8px;
+    
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #38b000,#9ef01a);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:700px){
+    nav ul{
+        width: 90%;
+       background:linear-gradient(#9ef01a,#38b000);
+        position: absolute;
+        top:0px;
+        right: 0;
+        z-index:2
+    }
+    nav ul li a{
+        color:#fff;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        margin: 78px 30px 20px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .row{
+        flex-direction: column-reverse;
+        margin:50px 0;
+    }
+    .col-2{
+        flex-basis: 80%;
+        margin-bottom: 50px;
+    }
+
+    .col-2 .controller{
+    width: 80%;
+    }
+    .color-box{
+        transform: translateX(75px);
+    }
+    .col-1{
+       flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 35px;
+    }
+    .col-1 h3{
+        font-size: 22px;
+    }
+
+}

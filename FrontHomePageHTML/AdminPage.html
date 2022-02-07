@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="AdminPage.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="leaflogo.png" class="logo">
+            <nav></nav>
+            </nav>
+            <img src="menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+        <button><a href="registration.html">Register Driver</button></a>
+        <button><a href="ViewDriver.html">Driver Details</button></a>
+        <button><a href="viewFeedback.html">View Feedback</button></a>
+        <button><a href="ViewDustbin.html">View Bin Level</button></a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- 
+TODO: Add SDKs for Firebase products that you want to use -->
+<!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<!-- Our script must be loaded after firebase references -->
+<script src="FirebaseAPI.js"></script>
+<script src="AdminPage.js"></script>
+
+</html>

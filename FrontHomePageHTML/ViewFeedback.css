@@ -1,0 +1,98 @@
+h1{
+    font-size: 42px;
+  background: -webkit-linear-gradient(124deg, rgba(16,121,10,1) 0%, rgba(10,100,121,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 50px;
+}
+.table1 {
+
+    width:120%;
+    font-size: large;
+    padding-left: 6%;
+
+  }
+
+  .Side1{
+    padding-left: 30%;
+    margin-left: 10%;
+    text-align: center;
+  }
+body{
+    background-color:white;
+}
+.table2 {
+
+    width:110%;
+    font-size: large;
+    border:1px solid black;
+    padding-left: 7%;
+
+  border-collapse: collapse;
+
+  }
+ .td1{
+      text-align: left;
+      width:3%;
+
+  }
+  .td2{
+    text-align: left;
+  }
+  #area{
+      color:red;
+  }
+.c{
+  color:white;
+
+}
+.name{
+  color:green;
+  font-size:25px;
+}
+.name1{
+  color:green;
+  font-size:25px;
+}
+.name2{
+  color:green;
+  font-size:25px;
+}
+.name3{
+  color:green;
+  font-size:25px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th {
+  background-color: #4287f5;
+  color: white;
+}
+
+th,
+td {
+  width: 150px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+h2 {
+  color: #4287f5;
+}
+ol, ul {
+    padding-left: 0rem;
+}
+.tab{
+  padding-left:2rem;
+  padding-right:2rem;
+
+    margin-top: 14px;
+}
+.n1{
+  font-size:15px;
+}
